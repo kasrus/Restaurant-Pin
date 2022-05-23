@@ -21,7 +21,7 @@ class RestaurantTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // Changing accessory's color
         //self.tintColor = .systemYellow
     }
 
