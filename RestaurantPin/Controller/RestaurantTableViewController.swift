@@ -8,9 +8,6 @@
 import UIKit
 
 class RestaurantTableViewController: UITableViewController {
-    enum Section {
-        case all
-    }
     
     var restaurants:[Restaurant] = [
         Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location:
@@ -75,10 +72,10 @@ class RestaurantTableViewController: UITableViewController {
         tableView.separatorStyle = .none
     }
 
-    func configureDataSource() -> UITableViewDiffableDataSource<Section, Restaurant> {
-        let cellIdentifier = "favoritecell"
+    func configureDataSource() -> RestaurantDiffableDataSource {
+        let cellIdentifier = "datacell"
         
-        let dataSource = UITableViewDiffableDataSource<Section, Restaurant>(
+        let dataSource = RestaurantDiffableDataSource(
             tableView: tableView,
             cellProvider: { tableView, indexPath, restaurant in
                 let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
