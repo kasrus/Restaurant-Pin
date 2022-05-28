@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF01A03A284150D800715AF5 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01A039284150D800715AF5 /* RestaurantDetailViewController.swift */; };
 		AF08847B28398D860006AD17 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF08847A28398D850006AD17 /* RestaurantTableViewCell.swift */; };
 		AF08847D283C42CA0006AD17 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF08847C283C42C90006AD17 /* Restaurant.swift */; };
 		AF088483283C9AE50006AD17 /* RestaurantDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF088482283C9AE50006AD17 /* RestaurantDiffableDataSource.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF01A039284150D800715AF5 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		AF08847A28398D850006AD17 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		AF08847C283C42C90006AD17 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AF088482283C9AE50006AD17 /* RestaurantDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDiffableDataSource.swift; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				AFAEBF0C2838B7580034AFFE /* RestaurantTableViewController.swift */,
+				AF01A039284150D800715AF5 /* RestaurantDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				AFAEBEF92838B5560034AFFE /* AppDelegate.swift in Sources */,
 				AFAEBEFB2838B5560034AFFE /* SceneDelegate.swift in Sources */,
 				AF088483283C9AE50006AD17 /* RestaurantDiffableDataSource.swift in Sources */,
+				AF01A03A284150D800715AF5 /* RestaurantDetailViewController.swift in Sources */,
 				AFAEBF0D2838B7580034AFFE /* RestaurantTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wmg-3u-iDq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f48-vW-rc3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20037"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Restaurant Table View Controller-->
+        <!--RestaurantPin-->
         <scene sceneID="KBM-T3-cse">
             <objects>
                 <tableViewController id="wmg-3u-iDq" customClass="RestaurantTableViewController" customModule="RestaurantPin" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,6 +83,7 @@
                                     <outlet property="nameLabel" destination="g2U-oS-sF6" id="lLt-YC-eL1"/>
                                     <outlet property="thumbnailImageView" destination="aOz-es-cjn" id="rTt-a8-S1V"/>
                                     <outlet property="typeLabel" destination="6Zh-99-1pk" id="NK4-nk-sUf"/>
+                                    <segue destination="wyg-qY-8V6" kind="show" identifier="showRestaurantDetail" id="rGA-4y-DIQ"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoritecell" id="pLm-OY-OrO" customClass="RestaurantTableViewCell" customModule="RestaurantPin" customModuleProvider="target">
@@ -156,6 +158,7 @@
                                     <outlet property="nameLabel" destination="VJF-Ez-6lq" id="k7q-01-GBO"/>
                                     <outlet property="thumbnailImageView" destination="6EA-VM-4xk" id="VZI-e5-fXI"/>
                                     <outlet property="typeLabel" destination="gCE-C0-0r9" id="sQQ-ah-2zR"/>
+                                    <segue destination="wyg-qY-8V6" kind="show" identifier="showRestaurantDetail" id="nYW-vA-wgY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -164,16 +167,103 @@
                             <outlet property="delegate" destination="wmg-3u-iDq" id="PYH-4P-r2p"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="RestaurantPin" id="w9f-yb-96y"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s2N-gb-Wnj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="549.27536231884062" y="-64.285714285714278"/>
+        </scene>
+        <!--Restaurant Detail View Controller-->
+        <scene sceneID="Xh9-Yq-DNt">
+            <objects>
+                <viewController id="wyg-qY-8V6" customClass="RestaurantDetailViewController" customModule="RestaurantPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kp1-WV-vjP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8MG-vA-UiW">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fsX-x3-QDN">
+                                <rect key="frame" x="20" y="138" width="374" height="77"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Baq-Pu-ASe">
+                                        <rect key="frame" x="162" y="0.0" width="50" height="23"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d94-Nr-6JW">
+                                        <rect key="frame" x="159.5" y="27" width="55.5" height="23"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXf-zJ-Ixi">
+                                        <rect key="frame" x="173" y="54" width="28" height="23"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rKl-XL-nAd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rKl-XL-nAd" firstAttribute="trailing" secondItem="fsX-x3-QDN" secondAttribute="trailing" constant="20" id="26f-f9-Guz"/>
+                            <constraint firstAttribute="bottom" secondItem="8MG-vA-UiW" secondAttribute="bottom" id="6hG-rE-jMd"/>
+                            <constraint firstItem="8MG-vA-UiW" firstAttribute="leading" secondItem="rKl-XL-nAd" secondAttribute="leading" id="7pa-ho-LY6"/>
+                            <constraint firstItem="fsX-x3-QDN" firstAttribute="centerX" secondItem="kp1-WV-vjP" secondAttribute="centerX" id="8nc-Ue-WQv"/>
+                            <constraint firstItem="8MG-vA-UiW" firstAttribute="top" secondItem="kp1-WV-vjP" secondAttribute="topMargin" id="aUd-7G-ZWp"/>
+                            <constraint firstItem="fsX-x3-QDN" firstAttribute="top" secondItem="rKl-XL-nAd" secondAttribute="top" constant="50" id="gox-xz-LLx"/>
+                            <constraint firstItem="8MG-vA-UiW" firstAttribute="trailing" secondItem="rKl-XL-nAd" secondAttribute="trailing" id="kVR-zn-LGW"/>
+                            <constraint firstItem="fsX-x3-QDN" firstAttribute="leading" secondItem="rKl-XL-nAd" secondAttribute="leading" constant="20" id="pUh-Rv-X0C"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7K9-eG-h1M"/>
+                    <connections>
+                        <outlet property="restaurantImageView" destination="8MG-vA-UiW" id="wu0-Fz-zJC"/>
+                        <outlet property="restaurantLocationLabel" destination="d94-Nr-6JW" id="Ewi-Mv-I1p"/>
+                        <outlet property="restaurantNameLabel" destination="Baq-Pu-ASe" id="wbk-bE-OJV"/>
+                        <outlet property="restaurantStack" destination="fsX-x3-QDN" id="lx6-bZ-D7F"/>
+                        <outlet property="restaurantTypeLabel" destination="cXf-zJ-Ixi" id="Yh3-hW-s3v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="haF-wg-co3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1326.0869565217392" y="-44.196428571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VJM-XH-4Id">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f48-vW-rc3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9qL-iR-2rc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wmg-3u-iDq" kind="relationship" relationship="rootViewController" id="eDc-i6-fWu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HFF-t3-XrM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-360.86956521739131" y="-64.285714285714278"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="nYW-vA-wgY"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
